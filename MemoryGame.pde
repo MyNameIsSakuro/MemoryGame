@@ -7,11 +7,10 @@ interface Mouse {
 interface Reaction {
   void react();
 }
-String rules = "asdasdasdasd";
 ArrayList<Mouse> mouse = new ArrayList();
 ArrayList<Drawable> drawables = new ArrayList();
 int pradeti = 1;
-
+Rules rules = new Rules();
 RoundButton start = new RoundButton(450, 350, 100, "Žaisti",30, new Reaction() {
   void react() {
     pradeti = 2;
@@ -30,6 +29,7 @@ void pradzia() {
   for (int i=drawables.size()-1; i>=0; i--) drawables.remove(i);
   for (int i=mouse.size()-1; i>=0; i--) mouse.remove(i);
   drawables.add(start);
+  drawables.add(rules);
   mouse.add(start);
   plotis.makeActive();
   aukstis.makeActive();
